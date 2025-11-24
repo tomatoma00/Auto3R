@@ -2,7 +2,11 @@
 Code for Auto3R: Automated 3D Reconstruction and Scanning via Data-driven Uncertainty Quantification
 
 ## Pipline & Result
-
+<div align="center">
+  <img src="assets/3pipelinenew.png"/>
+</div><br/>
+    
+---
 
 ## 0. Installation
 
