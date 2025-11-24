@@ -23,3 +23,4 @@ pip install
 ## 2. Trained UQ in custom datasets
 
 ## 3. Acknowledgements
+We are quite grateful for [3DGS](https://github.com/graphdeco-inria/gaussian-splatting), [FisherRF](https://github.com/JiangWenPL/FisherRF)
