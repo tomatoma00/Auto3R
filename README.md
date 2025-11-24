@@ -4,4 +4,4 @@ Code for Auto3R: Automated 3D Reconstruction and Scanning via Data-driven Uncert
 
 ## 0. Installation
 
-The installation of GIR is similar to [3D Gaussian Splatting](https://github.com/graphdeco-inria/gaussian-splatting).
+The installation of Auto3R is similar to [3D Gaussian Splatting](https://github.com/graphdeco-inria/gaussian-splatting).
