@@ -3,7 +3,7 @@ Code for Auto3R: Automated 3D Reconstruction and Scanning via Data-driven Uncert
 
 ## Pipline & Result
 <div align="center">
-  <img src="assets/3pipemainnew.png"/>
+  <img src="assets/3pipmainnew.png"/>
 </div><br/>
     
 ---
