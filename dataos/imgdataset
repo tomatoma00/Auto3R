@@ -1,0 +1,87 @@
+import torch
+from torch.utils.data import Dataset, DataLoader
+import os
+import random
+import torch
+from torch.utils.data import Dataset
+from torchvision.io import read_image           # loads [C,H,W] uint8
+from torchvision.transforms.functional import convert_image_dtype
+from pathlib import Path
+import numpy as np
+class ViewDataset(Dataset):
+    """
+    Loads training samples from
+        root/
+            {scene_id}/
+                input/     60 images,  e.g.  00000.png … 00059.png
+                uqgt/      60 ground-truth images with identical names
+
+    Returns
+        images : [S, 3, H, W]  float32 in [0,1]
+        gt_rgb : [S, H, W, 3]  float32 in [0,1]
+    where S = 1.
+    """
+
+    def __init__(self,root: str,mode: str = "train",
+        img_size: int = 518,scenes: list[str] | None = None,):
+
+        super().__init__()
+        self.root = Path(root)
+        self.img_size = img_size
+        self.trainidx = []
+        if scenes is None:
+            scenes = [p.name for p in self.root.iterdir() if p.is_dir()]
+            scenes = sorted(scenes)
+            subscenes = [scenes[i] for i in range(0,len(scenes),8)]
+        if mode=='test':
+            self.scenes = subscenes
+        elif mode=='train':
+            self.scenes = [ss for ss in scenes if ss not in subscenes]
+
+        print(f'reading {len(self.scenes)} id as {mode} dataset')
+        # build list: (scene_id, file_name)
+        self.samples = []
+        scenceidx = 0
+        for sid in self.scenes:
+            input_dir = self.root / sid / "input"
+            lastimgdir = self.root / sid / "input" / '00059.png'
+            ssim_dir = self.root / sid / "uqssim"
+            if (not input_dir.exists()) or (not ssim_dir.exists()):
+                continue
+            if len(os.listdir(input_dir))<60 or len(os.listdir(ssim_dir))<60:
+                continue
+            with open(self.root / sid / "trainidx.txt", 'r') as f:
+                trainnames = [line.strip() for line in f if line.strip()]
+            if len(trainnames)<self.S:
+                continue
+            for img_file in input_dir.glob("*"):
+                if img_file.name not in trainnames:
+                    self.samples.append((sid, img_file.name,scenceidx))
+            self.trainidx.append(trainnames)
+            scenceidx+=1
+
+        if len(self.samples) == 0:
+            raise RuntimeError(f"No images found in {root}")
+        else:
+            print(f'create {len(self.samples)} samples')
+        
+    def __len__(self):
+        return len(self.samples)
+
+    def _load_tensor(self, path: Path,pad=True):
+        img = read_image(str(path))           
+        img = convert_image_dtype(img, torch.float32) 
+        if pad:
+            img = torch.nn.functional.pad(img, (3,3,3,3), mode="constant", value=0)
+        return img
+
+    def __getitem__(self, idx):
+        scene_id, fname, sceneidx = self.samples[idx]
+        images = [self._load_tensor(self.root / scene_id / "input"  / f"{fname}")]
+        gt = self._load_tensor(self.root / scene_id / "uqssim"   / f"{fname[-7:]}",pad=False).permute(1, 2, 0)
+        gts = [gt.mean(dim=-1, keepdim=True) ]
+        images = torch.stack(images, dim=0)        # [S,3,H,W]
+        gts    = torch.stack(gts,    dim=0)        # [S,H,W,1]
+        return images, gts , str(self.root / scene_id / "gt" / f"{fname}")
+
+        
