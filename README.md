@@ -11,16 +11,17 @@ Code for Auto3R: Automated 3D Reconstruction and Scanning via Data-driven Uncert
 
 ## 0. Installation
 
-The installation of Auto3R is similar to [3D Gaussian Splatting](https://github.com/graphdeco-inria/gaussian-splatting).
-```
-# Another dependencies
-pip install
+You can simply follow the environment setup of [FisherRF](https://github.com/JiangWenPL/FisherRF).
 
-```
+Or install with the rnvironment.yml.
 
-## 1. Usage
+## 1. Pretrained weight
 
-## 2. Trained UQ in custom datasets
 
-## 3. Acknowledgements
+
+## 2. Usaged
+
+## 3. Trained UQ in custom datasets
+
+## 4. Acknowledgements
 We are quite grateful for [3DGS](https://github.com/graphdeco-inria/gaussian-splatting), [FisherRF](https://github.com/JiangWenPL/FisherRF)
