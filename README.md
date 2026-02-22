@@ -34,3 +34,16 @@ bash scripts/demo.sh -s demodata -m output
 
 ## 4. Acknowledgements
 We are quite grateful for [3DGS](https://github.com/graphdeco-inria/gaussian-splatting), [FisherRF](https://github.com/JiangWenPL/FisherRF)
+
+## cite
+```
+@misc{shen2025auto3rautomated3dreconstruction,
+      title={Auto3R: Automated 3D Reconstruction and Scanning via Data-driven Uncertainty Quantification}, 
+      author={Chentao Shen and Sizhe Zheng and Bingqian Wu and Yaohua Feng and Yuanchen Fei and Mingyu Mei and Hanwen Jiang and Xiangru Huang},
+      year={2025},
+      eprint={2512.04528},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2512.04528}, 
+}
+```
