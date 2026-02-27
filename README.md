@@ -12,7 +12,7 @@ Code for Auto3R: Automated 3D Reconstruction and Scanning via Data-driven Uncert
 
 You can simply follow the environment setup of [FisherRF](https://github.com/JiangWenPL/FisherRF).
 
-Or install with the rnvironment.yml.
+Or install with the environment.yml.
 
 ## 1. Pretrained weight
 
