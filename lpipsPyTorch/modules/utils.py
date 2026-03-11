@@ -18,6 +18,9 @@ def normalize_activation(x, eps=1e-10):
 def get_state_dict(net_type: str = 'alex', version: str = '0.1'):
     url = None # Same as 3DGS provided
 
+    if url is None:
+        return OrderedDict()
+
     # download
     old_state_dict = torch.hub.load_state_dict_from_url(
         url, progress=True,

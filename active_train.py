@@ -16,7 +16,7 @@ from utils.loss_utils import ssim
 from lpipsPyTorch import lpips, lpips_func
 from active import methods_dict
 from resnet_train import ResNet50Regressor
-from publicfunction import renderrandomview,qualitycheck,robust_normalize_gpu
+from publicfunction import qualitycheck, robust_normalize_gpu
 from torchvision.utils import save_image
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # import wandb
@@ -148,7 +148,7 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, checkpoi
             for ccii in range(len(scene.train_cameras[1.0])):
                 if scene.train_cameras[1.0][ccii].image_name==testcam[maxid].image_name:
                     chooseidx =ccii
-            scene.train_idxs.extend(chooseidx)
+            scene.train_idxs.append(chooseidx)
             print(f"ITER {iteration}: training views after selection: {scene.train_idxs}")
             with open(f'{args.model_path}/viewnumber.txt','w') as f:
                 for iii in range(len(scene.train_idxs)):

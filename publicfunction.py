@@ -33,7 +33,7 @@ averageerror = []
 def qualitycheck(model,images,depths,out_dir,namelist,batch_size = 32,iter = -1):
     B, C, H, W = images.shape
     if H == W == 512:                 # nothing to do
-        pass
+        pad_left = pad_right = pad_top = pad_bottom = 0
     else:
         edge = max(H, W)
         pad_h, pad_w = edge - H, edge - W
