@@ -1,0 +1,4 @@
+ssimruns/*.pth filter=lfs diff=lfs merge=lfs -text
+pretrained/*.pkl filter=lfs diff=lfs merge=lfs -text
+pretrained/*.pth filter=lfs diff=lfs merge=lfs -text
+demodata.zip filter=lfs diff=lfs merge=lfs -text

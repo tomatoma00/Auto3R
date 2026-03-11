@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyTorch
+*.pth
+*.pt
+*.ckpt
+!ssimruns/scenebest.pth
+!pretrained/koniq_pretrained.pkl
+!pretrained/resnet50-19c8e357.pth
+!demodata.zip
+
+# Jupyter
+.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Output directories
+output/
+outputs/
+results/
+logs/
+runs/
+wandb/
+
+# Data
+data/
+datasets/
+demodata/
+dataos/
+
+# Compiled CUDA extensions (build artifacts, not source)
+submodules/*/build/
+submodules/*/*.egg-info/
+submodules/*/dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.log
