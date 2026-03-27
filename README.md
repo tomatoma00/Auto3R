@@ -31,7 +31,7 @@ Auto3R is an active learning framework for 3D reconstruction that automatically 
 
 ### Software
 - Linux (tested on Ubuntu 20.04)
-- CUDA 11.8
+- CUDA > 11.8
 - Conda or Miniconda
 
 ---
