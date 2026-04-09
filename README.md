@@ -2,7 +2,7 @@
 
 Official implementation of **Auto3R: Automated 3D Reconstruction and Scanning via Data-driven Uncertainty Quantification**
 
->**2026.4.9：we apply Auto3R on Depth-anything-3! we will update a new code for Auto3R+DA3 in this week!**
+>**2026.4.9：we apply Auto3R on Depth-anything-3! [AutoDA3](https://github.com/tomatoma00/AutoDA3)**
 
 [![arXiv](https://img.shields.io/badge/arXiv-2512.04528-b31b1b.svg)](https://arxiv.org/abs/2512.04528)
 
