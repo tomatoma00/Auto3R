@@ -222,8 +222,8 @@ def read_extrinsics_text(path):
             if len(line) > 0 and line[0] != "#":
                 elems = line.split()
                 image_id = int(elems[0])
-                qvec = None
-                tvec = None
+                qvec = np.array(tuple(map(float, elems[1:5])))
+                tvec = np.array(tuple(map(float, elems[5:8])))
                 camera_id = int(elems[8])
                 image_name = elems[9]
                 elems = fid.readline().split()
