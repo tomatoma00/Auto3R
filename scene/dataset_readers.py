@@ -73,7 +73,7 @@ def readColmapCameras(cam_extrinsics, cam_intrinsics, images_folder):
         width = intr.width
 
         uid = intr.id
-        if False:
+        if True:#our sample set false
             R = np.transpose(qvec2rotmat(extr.qvec))
             T = np.array(extr.tvec)
         else:
