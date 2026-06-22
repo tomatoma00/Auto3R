@@ -1,6 +1,6 @@
 # Auto3R
 
-Official implementation of **Auto3R: Automated 3D Reconstruction and Scanning via Data-driven Uncertainty Quantification**
+[ECCV 2026] Official implementation of **Auto3R: Automated 3D Reconstruction and Scanning via Data-driven Uncertainty Quantification**
 
 >**2026.6.18：Auto3R has been accepted by ECCV 2026**
 
