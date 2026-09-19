@@ -303,13 +303,10 @@ Reduce the rendering batch size at `active_train.py:117` (default `B=64`).
 ## Citation
 
 ```bibtex
-@misc{shen2025auto3rautomated3dreconstruction,
-      title={Auto3R: Automated 3D Reconstruction and Scanning via Data-driven Uncertainty Quantification},
-      author={Chentao Shen and Sizhe Zheng and Bingqian Wu and Yaohua Feng and Yuanchen Fei and Mingyu Mei and Hanwen Jiang and Xiangru Huang},
-      year={2025},
-      eprint={2512.04528},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2512.04528},
+@InProceedings{auto3r,
+author="Shen, Chentao and Zheng, Sizhe and Wu, Bingqian and Feng, Yaohua and Fei, YuanChen and Mei, Mingyu and Jiang, Hanwen and Huang, Xiangru",
+title="Auto3R: Automated 3D Reconstruction and Scanning via Data-Driven Uncertainty Quantification",
+booktitle="ECCV",
+year="2026",
 }
 ```
